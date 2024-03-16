@@ -1,0 +1,21 @@
+a. abs $s0, s1 (lấy giá trị tuyệt đối của $s1 và lưu vào $s0):
+s0 <= | $s1 |
+      slt $at, $s1, $zero # nếu $s1 < 0, $at = 1; ngược lại $at = 0
+      beq $at, $zero, SKIP # nếu $s1 >= 0, bỏ qua lệnh tiếp theo
+      sub $s1, $zero, $s1 # đổi dấu $s1
+      SKIP:
+      move $s0, $s1 # di chuyển giá trị tuyệt đối của $s1 vào $s0
+
+b. move $s0, s1 (di chuyển giá trị của $s1 vào $s0):
+s0 <= $s1
+      add $s0, $s1, $zero # $s0 = $s1 + 0
+
+c. not $s0 (phủ định bit của $s0):
+s0 <= bit invert (s0)
+      nor $s0, $s0, $zero # $s0 = NOR($s0, 0)
+
+d. ble $s1,s2,L (nếu $s1 nhỏ hơn hoặc bằng $s2, nhảy đến L):
+if (s1 <= $s2) 
+j L
+      slt $at, $s2, $s1 # nếu $s2 < $s1, $at = 1; ngược lại $at = 0
+      beq $at, $zero, L # nếu $s1 <= $s2, nhảy đến L
