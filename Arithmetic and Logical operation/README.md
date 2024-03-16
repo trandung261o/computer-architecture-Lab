@@ -28,3 +28,11 @@
     Create a new project to implement assign.1. Compile and upload 
     to simulator. Initialize two operands (register $s1 and $s2), run this program step 
     by step, observe memory and registers value.
+##### assign.2
+    Write a program to do the following tasks:
+    ▪ Extract MSB of $s0
+    ▪ Clear LSB of $s0
+    ▪ Set LSB of $s0 (bits 7 to 0 are set to 1)
+    ▪ Clear $s0 (s0=0, must use logical instructions)
+    MSB: Most Significant Byte
+    LSB: Least Significant Byte
