@@ -49,3 +49,11 @@
     d. ble $s1,s2,L
         if (s1 <= $s2) 
             j L
+##### assign.4
+    To dectect overflow in additional operation, we also use other rule than the one 
+    in Assignment 1. This rule is: when add two operands that have the same sign, 
+    overflow will occur if the sum doesn’t have the same sign with either operands. 
+    You need to use this rule to write another overflow detection program.
+##### assign.5
+    Write a program that implement multiply by a small power of 2. (2, 4, 8, 16, etc 
+    for example).
