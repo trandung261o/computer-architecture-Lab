@@ -36,3 +36,16 @@
     ▪ Clear $s0 (s0=0, must use logical instructions)
     MSB: Most Significant Byte
     LSB: Least Significant Byte
+##### assign.3
+    Pseudo instructions in MIPS are not-directly-run-on-MIPS-processor instructions 
+    which need to be converted to real-instructions of MIPS. Re-write the following 
+    pseudo instructions using real-instructions understood by MIPS processors:
+    a. abs $s0,s1
+        s0 <= | $s1 |
+    b. move $s0,s1
+        s0 <= $s1
+    c. not $s0
+        s0 <= bit invert (s0)
+    d. ble $s1,s2,L
+        if (s1 <= $s2) 
+            j L
