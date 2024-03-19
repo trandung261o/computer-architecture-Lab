@@ -84,3 +84,7 @@
     and upload to the simulator. Run this program step by step; observe the changing 
     of memory and the content of registers by each step. Change the value of test 
     variable and run this program some times to check all cases.
+##### assign.4
+    Create a new project to implement this function: find the element with the 
+    largest absolute value in a list of integers. Assuming that this list is
+    store in an integer array and we know the number of elements in it.
