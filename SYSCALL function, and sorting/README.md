@@ -8,3 +8,8 @@
          la $a0, test
          syscall
     Create a new project to implement the program 
+
+##### assign.2
+    Create a new project to print the sum of two register $s0 and $s1 according to 
+    this format:
+    “The sum of (s0) and (s1) is (result)”
