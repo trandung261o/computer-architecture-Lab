@@ -20,3 +20,7 @@
     Create a new project to implement the program. Add 
     more instructions to assign a test string for y variable and implement strcpy
     function
+##### assign.4
+    The program count the length of a null-terminated string.
+    Accomplish the assignment with syscall function to get a string from 
+    dialog and show the length to message dialog
