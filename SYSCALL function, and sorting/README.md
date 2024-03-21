@@ -24,3 +24,7 @@
     The program count the length of a null-terminated string.
     Accomplish the assignment with syscall function to get a string from 
     dialog and show the length to message dialog
+##### assign.5
+    Write a program that let user input a string by typing individual letters. Input 
+    process will be terminated when user press Enter or then length of the string 
+    exceed 20 characters. Print the reverse string.
