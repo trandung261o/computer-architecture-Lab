@@ -1,12 +1,11 @@
-##### assign.1
-    The sum of two 32-bit integers may not be representable in 32 bits. In this case, 
-    we say that an overflow has occurred. Overflow is possible only with operands of 
-    the same sign. For two nonnegative (negative) operands, if the sum obtained is 
-    less (greater) than eitheir operand, overflow has occurred. The following program 
-    dectects overflow based on this rule. Two operands are stored in register $s1 and 
-    $s2, the sum is stored in register $s3. If overflow occur, $t0 register is set to 1 
-    and clear to 0 in otherwise.
-
+### Assignment 1:
+The sum of two 32-bit integers may not be representable in 32 bits. In this case, 
+we say that an overflow has occurred. Overflow is possible only with operands of 
+the same sign. For two nonnegative (negative) operands, if the sum obtained is 
+less (greater) than eitheir operand, overflow has occurred. The following program 
+dectects overflow based on this rule. Two operands are stored in register $s1 and 
+$s2, the sum is stored in register $s3. If overflow occur, $t0 register is set to 1 
+and clear to 0 in otherwise.
     .text
     start:
       li $t0,0 #No Overflow is default status
@@ -25,10 +24,10 @@
       li $t0,1 #the result is overflow
     EXIT:
 
-    Create a new project to implement assign.1. Compile and upload 
-    to simulator. Initialize two operands (register $s1 and $s2), run this program step 
-    by step, observe memory and registers value.
-##### assign.2
+Create a new project to implement assign.1. Compile and upload 
+to simulator. Initialize two operands (register $s1 and $s2), run this program step 
+by step, observe memory and registers value.
+### Assignment 2:
     Write a program to do the following tasks:
     ▪ Extract MSB of $s0
     ▪ Clear LSB of $s0
@@ -36,7 +35,7 @@
     ▪ Clear $s0 (s0=0, must use logical instructions)
     MSB: Most Significant Byte
     LSB: Least Significant Byte
-##### assign.3
+### Assignment 3:
     Pseudo instructions in MIPS are not-directly-run-on-MIPS-processor instructions 
     which need to be converted to real-instructions of MIPS. Re-write the following 
     pseudo instructions using real-instructions understood by MIPS processors:
@@ -49,10 +48,10 @@
     d. ble $s1,s2,L
         if (s1 <= $s2) 
             j L
-### assign.4
+### Assignment 4:
 when add two operands that have the same sign, overflow will occur if 
 the sum doesn’t have the same sign with either operands. 
 use this rule to write another overflow detection program.
-### assign.5
+### Assignment 5:
 Write a program that implement multiply by a small power of 2. (2, 4, 8, 16, etc 
 for example).
