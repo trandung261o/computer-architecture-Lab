@@ -15,7 +15,7 @@
 	loop: 
 		lb $t2, ($t1) #$t2 luu ki tu hien tai
 		beq $t2, $0, exit_loop #thoat neu ki tu hien tai la NULL
-		addi $t4, $t2, -97 #tinh offset
+		addi $t4, $t2, -97 #tinh chi so trong mang a
 		lb $t3, a($t4) #$t3 luu gia tri cua mang tai chi si ki tu hien tai
 		#neu ki tu gap lan dau, bien dem +1, danh dau da gap
 		bne $t3, $0, continue_loop
