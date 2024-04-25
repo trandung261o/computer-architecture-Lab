@@ -1,7 +1,7 @@
 .data
-	student1: .space 30
-	student2: .space 30
-
+	student1: .space 30 #chuoi ki tu 30 phan tu chua ten sv 1
+	student2: .space 30 #chuoi ki tu 30 phan tu chua ten sv 2
+	error: .asciiz "loi thao tac nhap lieu! gia tri chua dung!"
 .text
 
 
@@ -17,6 +17,68 @@
 	la $a0, student2
 	li $a1, 30
 	syscall
+	
+	
+	#han che loi nhap lieu ten sinh vien 1 tu nguoi dung
+	la $t1, student1
+	check1:
+		lb $t2, ($t1) 
+		beq $t2, 32, exit_check1 #thoat neu $t2 la ki tu '\n'
+		beq $t2, 32, continue #tiep tuc vong lap neu $t2 la ki tu cach ' '
+		
+		#thoat chuong trinh neu ki tu ko hop le
+		blt $t2, 'A', exit_program2
+		bgt $t2, 'z', exit_program2
+
+		blt $t2, 'a', check_upper
+		bgt $t2, 'Z', check_lower
+		
+	check_upper: 
+		bgt $t2, 'Z', exit_program2
+		j continue
+	
+	check_lower:
+		blt $t2, 'a', exit_program2
+		j continue
+
+	continue:
+		addi $t1, $t1, 1
+		j check1
+	
+	exit_check1:
+	
+	
+	
+	#han che loi nhap lieu ten sinh vien 2 tu nguoi dung
+	la $t1, student2
+	check2:
+		lb $t2, ($t1) 
+		beq $t2, 32, exit_check2 #thoat neu $t2 la ki tu '\n'
+		beq $t2, 32, continue2 #tiep tuc vong lap neu $t2 la ki tu cach ' '
+		
+		#thoat chuong trinh neu ki tu ko hop le
+		blt $t2, 'A', exit_program2
+		bgt $t2, 'z', exit_program2
+
+		blt $t2, 'a', check_upper2
+		bgt $t2, 'Z', check_lower2
+		
+	check_upper2: 
+		bgt $t2, 'Z', exit_program2
+		j continue2
+	
+	check_lower2:
+		blt $t2, 'a', exit_program2
+		j continue2
+
+	continue2:
+		addi $t1, $t1, 1
+		j check2
+	
+	exit_check2:
+	
+	
+	
 	
 	
 #---------------------------------------IN SINH VIEN 1-----------------------------------------------
@@ -143,4 +205,16 @@
 		j loop5		
 	exit_loop5:
 	
-
+	#ket thuc chuong trinh neu chay binh thuong
+	li $v0, 10
+	syscall
+	
+	
+#----------------------KET THUC CHUONG TRINH NEU CO LOI NHAP LIEU-----------------------------
+	exit_program2:
+		li $v0, 4
+		la $a0, error
+		syscall
+	
+		li $v0, 10
+		syscall
