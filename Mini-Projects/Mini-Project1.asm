@@ -3,9 +3,6 @@
 	student2: .space 30 #chuoi ki tu 30 phan tu chua ten sv 2
 	error: .asciiz "loi thao tac nhap lieu! gia tri chua dung!"
 .text
-
-
-
 	#nhap ten sinh vien 1
 	li $v0, 8
 	la $a0, student1
@@ -19,12 +16,12 @@
 	syscall
 	
 	
-	#han che loi nhap lieu ten sinh vien 1 tu nguoi dung
+#----------------------han che loi nhap lieu ten SINH VIEN 1 tu nguoi dung----------------------------------
 	la $t1, student1
 	check1:
 		lb $t2, ($t1) 
-		beq $t2, 32, exit_check1 #thoat neu $t2 la ki tu '\n'
-		beq $t2, 32, continue #tiep tuc vong lap neu $t2 la ki tu cach ' '
+		beq $t2, '\n', exit_check1 #thoat neu $t2 la ki tu '\n'
+		beq $t2, ' ', continue #tiep tuc vong lap neu $t2 la ki tu cach ' '
 		
 		#thoat chuong trinh neu ki tu ko hop le
 		blt $t2, 'A', exit_program2
@@ -49,12 +46,12 @@
 	
 	
 	
-	#han che loi nhap lieu ten sinh vien 2 tu nguoi dung
+#--------------han che loi nhap lieu ten SINH VIEN 2 tu nguoi dung-------------------------------------------
 	la $t1, student2
 	check2:
 		lb $t2, ($t1) 
-		beq $t2, 32, exit_check2 #thoat neu $t2 la ki tu '\n'
-		beq $t2, 32, continue2 #tiep tuc vong lap neu $t2 la ki tu cach ' '
+		beq $t2, '\n', exit_check2 #thoat neu $t2 la ki tu '\n'
+		beq $t2, ' ', continue2 #tiep tuc vong lap neu $t2 la ki tu cach ' '
 		
 		#thoat chuong trinh neu ki tu ko hop le
 		blt $t2, 'A', exit_program2
@@ -104,7 +101,7 @@
 	la $t1, 1($t3) #$t1 tro den ten cua sinh vien 1
 	loop2:
 		lb $t2, ($t1) #$$t2 luu ki tu hien tai
-		beq $t2, '\n' , exit_loop2 # neu ki tu hien tai la NULL, ket thuc vong lap
+		beq $t2, '\n' , exit_loop2 # neu ki tu hien tai la newline, ket thuc vong lap
 	
 		#in ki tu hien tai
 		li $v0, 11
