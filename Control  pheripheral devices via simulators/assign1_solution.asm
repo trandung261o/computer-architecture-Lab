@@ -85,10 +85,6 @@ exit:	li $v0, 10
 	syscall
 endmain:
 
-print_left_number:	jal SHOW_7SEG_LEFT
-			jr $ra
-	
-
 SHOW_7SEG_LEFT:	li $t0, SEVENSEG_LEFT
 		sb $a0, 0($t0)
 		nop
